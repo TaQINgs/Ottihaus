@@ -1,31 +1,38 @@
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 export default function Header() {
   const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const navLinks = [
     { label: "About Us", href: "/about" },
-    { label: "Menu", href: "/#products" },
-    { label: "Location", href: "/#location" },
-    { label: "Contact", href: "/#footer" },
+    { label: "Menu", href: "/menu" },
+    { label: "Location", href: "/location" },
+    { label: "Contact", href: "/contact" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-background)]/90 backdrop-blur-sm border-b border-[var(--color-border)]">
-      <div className="container flex items-center justify-between h-[72px]">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-background)]/95 backdrop-blur-sm border-b border-[var(--color-border)]">
+      <div className="container flex items-center justify-between h-[68px]">
         {/* Logo */}
-        <Link to="/" className="font-heading text-[22px] font-bold text-primary tracking-wide">
+        <Link
+          to="/"
+          className="font-heading text-[20px] font-bold text-primary tracking-[1px]"
+        >
           otti haus
         </Link>
 
-        {/* Navigation */}
+        {/* Navigation — Center */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.label}
               to={link.href}
-              className={`font-body text-[14px] text-primary transition-opacity duration-300 hover:opacity-100 ${
-                location.pathname === link.href ? "opacity-100" : "opacity-60"
+              className={`font-body text-[13px] text-primary transition-opacity duration-300 hover:opacity-100 ${
+                location.pathname === link.href
+                  ? "opacity-100 font-medium"
+                  : "opacity-55"
               }`}
             >
               {link.label}
@@ -34,15 +41,16 @@ export default function Header() {
         </nav>
 
         {/* Right Icons */}
-        <div className="flex items-center gap-3">
-          {/* Profile Icon */}
+        <div className="flex items-center gap-2">
+          {/* Profile Icon — small brown circle */}
           <button
-            className="w-[40px] h-[40px] rounded-full bg-primary flex items-center justify-center transition-transform duration-200 hover:scale-105"
+            className="w-[36px] h-[36px] rounded-full bg-primary flex items-center justify-center transition-transform duration-200 hover:scale-105"
             aria-label="Profile"
+            id="header-profile-btn"
           >
             <svg
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
@@ -55,14 +63,15 @@ export default function Header() {
             </svg>
           </button>
 
-          {/* Cart Icon */}
+          {/* Cart Icon — small tan/secondary circle */}
           <button
-            className="w-[40px] h-[40px] rounded-full bg-secondary flex items-center justify-center transition-transform duration-200 hover:scale-105"
+            className="w-[36px] h-[36px] rounded-full bg-secondary flex items-center justify-center transition-transform duration-200 hover:scale-105"
             aria-label="Cart"
+            id="header-cart-btn"
           >
             <svg
-              width="18"
-              height="18"
+              width="16"
+              height="16"
               viewBox="0 0 24 24"
               fill="none"
               stroke="#4d362e"
@@ -78,15 +87,35 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden w-[40px] h-[40px] rounded-full bg-primary-light flex flex-col items-center justify-center gap-1"
+            className="md:hidden w-[36px] h-[36px] rounded-full bg-primary-light flex flex-col items-center justify-center gap-[5px] ml-1"
             aria-label="Menu"
+            id="header-mobile-menu-btn"
+            onClick={() => setMobileOpen(!mobileOpen)}
           >
-            <span className="block w-5 h-[1.5px] bg-primary"></span>
-            <span className="block w-5 h-[1.5px] bg-primary"></span>
-            <span className="block w-4 h-[1.5px] bg-primary"></span>
+            <span className={`block w-[18px] h-[1.5px] bg-primary transition-transform duration-300 ${mobileOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
+            <span className={`block w-[18px] h-[1.5px] bg-primary transition-opacity duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
+            <span className={`block w-[14px] h-[1.5px] bg-primary transition-transform duration-300 ${mobileOpen ? "w-[18px] -rotate-45 -translate-y-[6.5px]" : ""}`} />
           </button>
         </div>
       </div>
+
+      {/* Mobile Nav Dropdown */}
+      {mobileOpen && (
+        <div className="md:hidden bg-[var(--color-background)] border-t border-[var(--color-border)] py-4">
+          <nav className="container flex flex-col gap-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="font-body text-[14px] text-primary/70 hover:text-primary transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

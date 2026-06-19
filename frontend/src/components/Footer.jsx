@@ -1,13 +1,11 @@
-import { Link } from "react-router-dom";
-
 export default function Footer() {
   return (
     <footer id="footer">
       {/* Main Footer */}
-      <div className="bg-secondary/40 py-16">
+      <div className="bg-secondary/30 py-16">
         <div className="container">
           {/* Logo */}
-          <h2 className="font-heading text-[36px] font-bold text-primary mb-10">
+          <h2 className="font-heading text-[32px] font-bold text-primary mb-10">
             otti haus
           </h2>
 
@@ -17,7 +15,7 @@ export default function Footer() {
             <div>
               <div className="flex items-start gap-2 mb-2">
                 <svg
-                  className="w-4 h-4 mt-1 flex-shrink-0"
+                  className="w-4 h-4 mt-0.5 flex-shrink-0"
                   viewBox="0 0 24 24"
                   fill="var(--color-primary)"
                 >
@@ -27,7 +25,7 @@ export default function Footer() {
                   Outlet Center
                 </span>
               </div>
-              <p className="font-body text-[13px] text-primary/70 leading-relaxed pl-6">
+              <p className="font-body text-[13px] text-primary/65 leading-relaxed pl-6">
                 Jl. Banteng, No.104, Turangga, Kec.
                 Lengkong, Kota Bandung, Jawa Barat
                 40264
@@ -38,7 +36,7 @@ export default function Footer() {
             <div>
               <div className="flex items-start gap-2 mb-2">
                 <svg
-                  className="w-4 h-4 mt-1 flex-shrink-0"
+                  className="w-4 h-4 mt-0.5 flex-shrink-0"
                   viewBox="0 0 24 24"
                   fill="var(--color-primary)"
                 >
@@ -50,7 +48,7 @@ export default function Footer() {
               </div>
               <a
                 href="mailto:admin@sincerahomemade.com"
-                className="font-body text-[13px] text-primary/70 underline pl-6 block"
+                className="font-body text-[13px] text-primary/65 underline pl-6 block"
               >
                 admin@sincerahomemade.com
               </a>
@@ -60,7 +58,7 @@ export default function Footer() {
             <div>
               <div className="flex items-start gap-2 mb-2">
                 <svg
-                  className="w-4 h-4 mt-1 flex-shrink-0"
+                  className="w-4 h-4 mt-0.5 flex-shrink-0"
                   viewBox="0 0 24 24"
                   fill="var(--color-primary)"
                 >
@@ -70,7 +68,7 @@ export default function Footer() {
                   Phone
                 </span>
               </div>
-              <p className="font-body text-[13px] text-primary/70 pl-6">
+              <p className="font-body text-[13px] text-primary/65 pl-6">
                 (+62)855-1236-100
               </p>
             </div>
@@ -81,7 +79,7 @@ export default function Footer() {
       {/* Copyright Bar */}
       <div className="bg-primary py-4">
         <div className="container">
-          <p className="font-body text-[12px] text-white/70 text-center">
+          <p className="font-body text-[12px] text-white/60 text-center tracking-wide">
             © Copyrights by otti haus — PT. SINAR CERAH REKAN
           </p>
         </div>
