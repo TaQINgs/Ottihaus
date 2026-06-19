@@ -35,7 +35,7 @@ export const IMAGES = {
   placeholder: createPlaceholder(800, 600, "Image Placeholder"),
 
   // Hero section images
-  heroImage: "/image/1-p1.png",
+  heroImage: "/image/1-p1.jpeg",
   heroImageAbout: "/image/1-p2.png",
 
   // About / Story section
