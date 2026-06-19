@@ -20,8 +20,8 @@ export default function Contact() {
               </h1>
 
               <p className="font-body text-[15px] text-primary/70 leading-[1.8] max-w-[420px]">
-                Cek lokasi terdekat kami, info operasional, dan kontak di sini. 
-                Siap melayani kamu untuk dine-in santai, takeaway, maupun 
+                Cek lokasi terdekat kami, info operasional, dan kontak di sini.
+                Siap melayani kamu untuk dine-in santai, takeaway, maupun
                 pemesanan via delivery.
               </p>
             </div>
@@ -92,7 +92,7 @@ export default function Contact() {
         <div className="container">
           <div className="border border-[var(--color-border)] rounded-[8px] bg-white/20 p-8 md:p-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 divide-y md:divide-y-0 md:divide-x divide-[var(--color-border)]">
-              
+
               {/* Column 1 — Contact */}
               <div className="text-center pb-6 md:pb-0 md:px-6 flex flex-col items-center">
                 <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white mb-4">
@@ -152,14 +152,16 @@ export default function Contact() {
       </section>
 
       {/* ===== MAP SECTION ===== */}
+      {/* ===== MAP SECTION ===== */}
       <section className="section pb-[100px]">
         <div className="container text-center">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
             <h2 className="font-heading font-bold text-primary text-[20px] md:text-[24px]">
               Find Us On Google Maps
             </h2>
+
             <a
-              href="https://maps.google.com"
+              href="https://maps.google.com/?q=otti+haus"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline py-2 px-6 text-[12px]"
@@ -168,12 +170,15 @@ export default function Contact() {
             </a>
           </div>
 
-          {/* Map placeholder */}
-          <div className="w-full border border-[var(--color-border)] overflow-hidden bg-[#d4cbbf]">
-            <img
-              src={IMAGES.map}
-              alt="Otti Haus location map placeholder"
-              className="w-full aspect-[16/6] md:aspect-[16/5] object-cover"
+          <div className="w-full border border-[var(--color-border)] overflow-hidden aspect-[16/6] md:aspect-[16/5]">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.634020657582!2d107.62354359999999!3d-6.934270700000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e96fcb749b5f%3A0x3a8597f563f17596!2sotti%20haus%20-%20sourdough%2C%20roti%2C%20dan%20kue!5e0!3m2!1sid!2sid!4v1781842052787!5m2!1sid!2sid"
+              className="w-full h-full"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Otti Haus Location"
             />
           </div>
         </div>

@@ -170,7 +170,7 @@ export default function Home() {
       </section>
 
       {/* ===== TESTIMONIAL SECTION ===== */}
-      <TestimonialSection />
+      {/* <TestimonialSection /> */}
 
       {/* ===== LOCATION SECTION ===== */}
       <section id="location" className="section">

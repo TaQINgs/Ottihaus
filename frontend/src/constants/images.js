@@ -29,43 +29,43 @@ export const SECTION_BACKGROUNDS = {
 // image containers. Replace with real photos later.
 export const IMAGES = {
   // Global background pattern (subtle bread illustrations)
-  background: createPlaceholder(1920, 1080, "Background Pattern"),
+  background: "/image/bg.png",
 
   // Generic placeholder
   placeholder: createPlaceholder(800, 600, "Image Placeholder"),
 
   // Hero section images
-  heroImage: createPlaceholder(900, 700, "Hero Image"),
-  heroImageAbout: createPlaceholder(900, 700, "About Hero Image"),
+  heroImage: "/image/1-p1.png",
+  heroImageAbout: "/image/1-p2.png",
 
   // About / Story section
-  aboutImage: createPlaceholder(700, 500, "About Image"),
-  storyImage: createPlaceholder(700, 500, "Story Image"),
+  aboutImage: "/image/2-p1.png",
+  storyImage: "/image/2-p2.png",
 
   // Product images
-  product1: createPlaceholder(400, 400, "Product 1"),
-  product2: createPlaceholder(400, 400, "Product 2"),
-  product3: createPlaceholder(400, 400, "Product 3"),
+  product1: "/image/produk1.png",
+  product2: "/image/produk2.png",
+  product3: "/image/produk3.png",
 
   // Location section
-  locationImage: createPlaceholder(700, 500, "Location Image"),
+  locationImage: "/image/1-p1.png",
 
   // Quality section (About page)
-  qualityImage: createPlaceholder(700, 600, "Quality Image"),
+  qualityImage: "/image/3-p2.png",
 
   // Menu page
-  menuHero: createPlaceholder(900, 700, "Menu Hero Image"),
+  menuHero: "/image/1-p3.png",
   menuProduct: createPlaceholder(400, 400, "Menu Product"),
 
   // Location page
-  locationHero: createPlaceholder(900, 700, "Location Hero Image"),
-  storeCard: createPlaceholder(400, 300, "Store Image"),
+  locationHero: "/image/loc2.png",
+  storeCard: "/image/loc1.png",
 
   // Testimonial
-  testimonialImage: createPlaceholder(500, 400, "Testimonial Image"),
+  testimonialImage: "/image/testi.jpeg",
   testimonialAvatar: createPlaceholder(100, 100, "Avatar"),
 
   // Contact page
-  contactHero: createPlaceholder(1200, 800, "Contact Hero Image"),
+  contactHero: "/image/loc1.png",
   map: createPlaceholder(1600, 600, "Google Maps Placeholder"),
 };

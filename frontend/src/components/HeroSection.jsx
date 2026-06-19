@@ -1,4 +1,5 @@
 import Button from "./Button";
+import { SECTION_BACKGROUNDS } from "../constants/images";
 
 export default function HeroSection({
   label,
@@ -11,7 +12,13 @@ export default function HeroSection({
   imageAlt = "Otti Haus",
 }) {
   return (
-    <section className="section pt-[140px] pb-[var(--spacing-section)]">
+    <section className="section pt-[140px] pb-[var(--spacing-section)] relative"
+      style={{
+        backgroundImage: `url(${SECTION_BACKGROUNDS.hero})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}>
       <div className="container">
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-8">
           {/* Left Content — 40% */}
