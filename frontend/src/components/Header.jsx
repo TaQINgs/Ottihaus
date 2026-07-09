@@ -13,7 +13,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-background)]/95 backdrop-blur-sm border-b border-[var(--color-border)]">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-secondary)] backdrop-blur-sm border-b border-[var(--color-border)]">
       <div className="container flex items-center justify-between h-[68px]">
         {/* Logo */}
         <Link
@@ -29,11 +29,10 @@ export default function Header() {
             <Link
               key={link.label}
               to={link.href}
-              className={`font-body text-[13px] text-primary transition-opacity duration-300 hover:opacity-100 ${
-                location.pathname === link.href
-                  ? "opacity-100 font-medium"
-                  : "opacity-55"
-              }`}
+              className={`font-body text-[17px] text-primary transition-opacity duration-300 hover:opacity-100 ${location.pathname === link.href
+                ? "opacity-100 font-medium"
+                : "opacity-60"
+                }`}
             >
               {link.label}
             </Link>
@@ -107,7 +106,7 @@ export default function Header() {
               <Link
                 key={link.label}
                 to={link.href}
-                className="font-body text-[14px] text-primary/70 hover:text-primary transition-colors"
+                className="font-body text-[14px] text-primary hover:text-primary transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {link.label}

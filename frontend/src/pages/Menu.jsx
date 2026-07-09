@@ -25,14 +25,14 @@ export default function Menu() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-8">
             {/* Left Content — 45% */}
-            <div className="w-full md:w-[45%] order-2 md:order-1">
+            <div className="w-full md:w-[55%] order-2 md:order-1">
               <p className="label">Our Menu</p>
 
               <h1 className="font-heading font-bold text-primary mb-5 leading-[1.15]">
                 Browse Our Sourdough &amp; Bread
               </h1>
 
-              <p className="font-body text-[15px] text-primary/70 leading-[1.8] mb-8 max-w-[420px]">
+              <p className="font-body text-[15px] text-primary leading-[1.8] mb-8 max-w-[420px]">
                 Explore our artisan sourdough products, freshly baked bread,
                 premium pastries, and a curated selection of bakery favorites —
                 all crafted daily with natural fermentation and honest
@@ -43,7 +43,7 @@ export default function Menu() {
             </div>
 
             {/* Right Image — 55% */}
-            <div className="w-full md:w-[55%] order-1 md:order-2">
+            <div className="w-full md:w-[45%] order-1 md:order-2">
               <div className="rounded-[8px] overflow-hidden">
                 <img
                   src={IMAGES.menuHero}

@@ -39,7 +39,7 @@ export default function TestimonialSection() {
             <h2 className="font-heading font-bold text-primary mb-5 text-[26px] md:text-[32px] leading-tight">
               Why Sourdough Lovers Choose OTTI HAUS
             </h2>
-            <p className="font-body text-[14px] text-primary/65 leading-[1.8]">
+            <p className="font-body text-[14px] text-primary leading-[1.8]">
               Soft sourdough, fresh daily, honest ingredients,
               more's what they're saying
             </p>
@@ -75,7 +75,7 @@ export default function TestimonialSection() {
                     ))}
                   </div>
 
-                  <p className="font-body text-[13px] text-primary/70 leading-[1.7] mb-5 italic min-h-[85px] flex items-center">
+                  <p className="font-body text-[13px] text-primary leading-[1.7] mb-5 italic min-h-[85px] flex items-center">
                     "{current.quote}"
                   </p>
 
@@ -89,9 +89,8 @@ export default function TestimonialSection() {
                       <button
                         key={index}
                         onClick={() => setActiveIndex(index)}
-                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                          activeIndex === index ? "bg-primary w-4" : "bg-primary/25"
-                        }`}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${activeIndex === index ? "bg-primary w-4" : "bg-primary/25"
+                          }`}
                         aria-label={`Go to testimonial ${index + 1}`}
                       />
                     ))}

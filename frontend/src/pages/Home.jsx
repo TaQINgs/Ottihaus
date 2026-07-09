@@ -66,12 +66,18 @@ export default function Home() {
     <>
       {/* ===== HERO SECTION ===== */}
       <HeroSection
-        label="sourdough bakery"
+        label="Sourdough bakery"
         heading="Sourdough & Beyond"
         subtitle="Baked Naturally for Every Day"
         description="We rebalance indulgence: soft sourdough ragi alami dan aneka roti premium dipanggang segar setiap hari. Baik untuk teman ngesparti fokus, pelengkap momen produktif di kafe, hingga camilan bersama teman, kami menyajikannya dengan sempurna."
-        primaryBtn="order now"
-        secondaryBtn="see our menu"
+        primaryBtn={{
+          text: "Order Now",
+          href: "https://wa.me/628123456789",
+        }}
+        secondaryBtn={{
+          text: "See Our Menu",
+          to: "/menu",
+        }}
         image={IMAGES.heroImage}
         imageAlt="Otti Haus artisan sourdough bread display"
       />
@@ -88,12 +94,7 @@ export default function Home() {
                   alt="Otti Haus bakery"
                   className="w-full h-[320px] md:h-[460px] object-cover rounded-[6px]"
                 />
-                {/* Carousel Dots */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                  <span className="w-2 h-2 rounded-full bg-primary" />
-                  <span className="w-2 h-2 rounded-full bg-primary/25" />
-                  <span className="w-2 h-2 rounded-full bg-primary/25" />
-                </div>
+
               </div>
             </div>
 
@@ -103,7 +104,7 @@ export default function Home() {
               <h2 className="font-heading font-bold text-primary mb-5 text-[30px] md:text-[38px] leading-tight">
                 Wild Yeast. Soft Texture. Fresh Daily.
               </h2>
-              <p className="font-body text-[15px] text-primary/70 leading-[1.8] mb-8">
+              <p className="font-body text-[15px] text-primary leading-[1.8] mb-8">
                 Bandung's sourdough bakery yang menghadirkan premium
                 bread dengan proses fermentasi alami dan dipanggang fresh
                 setiap hari. Menyediakan berbagai varian sourdough,
@@ -117,7 +118,7 @@ export default function Home() {
                   <p className="font-heading text-[32px] font-bold text-primary leading-none">
                     5000+
                   </p>
-                  <p className="font-body text-[11px] text-primary/55 mt-1 uppercase tracking-wider">
+                  <p className="font-body text-[11px] text-primary mt-1 uppercase tracking-wider">
                     Total customer
                   </p>
                 </div>
@@ -125,7 +126,7 @@ export default function Home() {
                   <p className="font-heading text-[32px] font-bold text-primary leading-none">
                     4
                   </p>
-                  <p className="font-body text-[11px] text-primary/55 mt-1 uppercase tracking-wider">
+                  <p className="font-body text-[11px] text-primary mt-1 uppercase tracking-wider">
                     outlets
                   </p>
                 </div>
@@ -133,13 +134,13 @@ export default function Home() {
                   <p className="font-heading text-[32px] font-bold text-primary leading-none">
                     95%
                   </p>
-                  <p className="font-body text-[11px] text-primary/55 mt-1 uppercase tracking-wider">
+                  <p className="font-body text-[11px] text-primary mt-1 uppercase tracking-wider">
                     ratings
                   </p>
                 </div>
               </div>
 
-              <Button variant="outline">learn more</Button>
+              <Button variant="outline" to="/about">learn more</Button>
             </div>
           </div>
         </div>
@@ -148,13 +149,13 @@ export default function Home() {
       {/* ===== PRODUCT SECTION ===== */}
       <section id="products" className="section">
         <div className="container text-center">
-          <p className="label">otti's a lineup</p>
+          <p className="label">Otti's Finest</p>
           <h2 className="font-heading font-bold text-primary mb-12 text-[30px] md:text-[38px]">
             The Sourdough Everyone Loves
           </h2>
 
           {/* Product Grid — 3 columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-[780px] mx-auto mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full mb-10">
             {PRODUCTS.map((product, index) => (
               <ProductCard
                 key={product.id}
@@ -165,7 +166,7 @@ export default function Home() {
             ))}
           </div>
 
-          <Button variant="primary">see all menu</Button>
+          <Button variant="primary" to="/menu">see all menu</Button>
         </div>
       </section>
 
@@ -223,7 +224,7 @@ export default function Home() {
                   <h3 className="font-heading text-[18px] font-bold text-primary">
                     {currentStore.name.toLowerCase()}
                   </h3>
-                  <p className="font-body text-[13px] text-primary/60">
+                  <p className="font-body text-[13px] text-primary">
                     {currentStore.address}
                   </p>
                 </div>
@@ -247,7 +248,7 @@ export default function Home() {
                   >
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                   </svg>
-                  <span className="font-body text-[14px] text-primary/75">
+                  <span className="font-body text-[14px] text-primary">
                     {currentStore.address}
                   </span>
                 </div>
@@ -263,7 +264,7 @@ export default function Home() {
                     <circle cx="12" cy="12" r="10" />
                     <path d="M12 6v6l4 2" />
                   </svg>
-                  <span className="font-body text-[14px] text-primary/75">
+                  <span className="font-body text-[14px] text-primary">
                     {currentStore.hours}
                   </span>
                 </div>
@@ -276,7 +277,7 @@ export default function Home() {
                   >
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                   </svg>
-                  <span className="font-body text-[14px] text-primary/75">
+                  <span className="font-body text-[14px] text-primary">
                     {currentStore.phone}
                   </span>
                 </div>
@@ -293,7 +294,7 @@ export default function Home() {
                     href={currentStore.maps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-body text-[14px] text-primary/75 underline"
+                    className="font-body text-[14px] text-primary underline"
                   >
                     View on Google Maps
                   </a>

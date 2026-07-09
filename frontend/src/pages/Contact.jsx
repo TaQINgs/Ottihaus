@@ -14,12 +14,12 @@ export default function Contact() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-8">
             {/* Left Content — 45% */}
-            <div className="w-full md:w-[45%] order-2 md:order-1">
+            <div className="w-full md:w-[50%] order-2 md:order-1">
               <h1 className="font-heading font-bold text-primary mb-6 text-[36px] md:text-[48px] lg:text-[64px] leading-[1.1]">
                 visit our space
               </h1>
 
-              <p className="font-body text-[15px] text-primary/70 leading-[1.8] max-w-[420px]">
+              <p className="font-body text-[15px] text-primary leading-[1.8] max-w-[420px]">
                 Cek lokasi terdekat kami, info operasional, dan kontak di sini.
                 Siap melayani kamu untuk dine-in santai, takeaway, maupun
                 pemesanan via delivery.
@@ -27,7 +27,7 @@ export default function Contact() {
             </div>
 
             {/* Right Content — 55% */}
-            <div className="w-full md:w-[55%] order-1 md:order-2">
+            <div className="w-full md:w-[45%] order-1 md:order-2">
               <div className="relative">
                 {/* Outlet Image */}
                 <div className="rounded-[8px] overflow-hidden border border-[var(--color-border)]">
@@ -78,7 +78,7 @@ export default function Contact() {
                 <h4 className="font-heading text-[16px] font-bold text-primary tracking-wide">
                   otti haus central
                 </h4>
-                <p className="font-body text-[13px] text-primary/55 mt-1">
+                <p className="font-body text-[13px] text-primary mt-1">
                   Jln. KH Ahmad Dahlan
                 </p>
               </div>
@@ -103,7 +103,7 @@ export default function Contact() {
                 <h4 className="font-heading text-[14px] font-bold text-primary mb-3 uppercase tracking-wider">
                   Contact
                 </h4>
-                <p className="font-body text-[13px] text-primary/75">
+                <p className="font-body text-[13px] text-primary">
                   (+62)855-1236-100
                 </p>
               </div>
@@ -119,13 +119,13 @@ export default function Contact() {
                   Email
                 </h4>
                 <div className="flex flex-col gap-1">
-                  <a href="mailto:admin@sincerahomemade.com" className="font-body text-[13px] text-primary/75 hover:underline">
+                  <a href="mailto:admin@sincerahomemade.com" className="font-body text-[13px] text-primary hover:underline">
                     admin@sincerahomemade.com
                   </a>
-                  <a href="mailto:info@sincerahomemade.com" className="font-body text-[13px] text-primary/75 hover:underline">
+                  <a href="mailto:info@sincerahomemade.com" className="font-body text-[13px] text-primary hover:underline">
                     info@sincerahomemade.com
                   </a>
-                  <a href="mailto:marketing@sincerahomemade.com" className="font-body text-[13px] text-primary/75 hover:underline">
+                  <a href="mailto:marketing@sincerahomemade.com" className="font-body text-[13px] text-primary hover:underline">
                     marketing@sincerahomemade.com
                   </a>
                 </div>
@@ -141,7 +141,7 @@ export default function Contact() {
                 <h4 className="font-heading text-[14px] font-bold text-primary mb-3 uppercase tracking-wider">
                   Outlet Center
                 </h4>
-                <p className="font-body text-[13px] text-primary/75 leading-relaxed max-w-[280px]">
+                <p className="font-body text-[13px] text-primary leading-relaxed max-w-[280px]">
                   Jl. Banteng No.104, Turangga, Kec. Lengkong, Kota Bandung, Jawa Barat 40264
                 </p>
               </div>

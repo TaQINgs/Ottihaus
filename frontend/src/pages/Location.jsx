@@ -45,14 +45,14 @@ export default function Location() {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-8">
             {/* Left Content — 45% */}
-            <div className="w-full md:w-[45%] order-2 md:order-1">
+            <div className="w-full md:w-[55%] order-2 md:order-1">
               <p className="label">Contact Us</p>
 
               <h1 className="font-heading font-bold text-primary mb-5 leading-[1.15]">
                 Get In Touch With OTTI HAUS
               </h1>
 
-              <p className="font-body text-[15px] text-primary/70 leading-[1.8] mb-8 max-w-[420px]">
+              <p className="font-body text-[15px] text-primary leading-[1.8] mb-8 max-w-[420px]">
                 Ada pertanyaan tentang menu, pesanan custom, reservasi
                 tempat, atau kerjasama? Hubungi tim OTTI HAUS — kami
                 siap membantu dengan cepat dan ramah.
@@ -65,7 +65,7 @@ export default function Location() {
             </div>
 
             {/* Right Image — 55% */}
-            <div className="w-full md:w-[55%] order-1 md:order-2">
+            <div className="w-full md:w-[45%] order-1 md:order-2">
               <div className="rounded-[8px] overflow-hidden">
                 <img
                   src={IMAGES.locationHero}
@@ -120,7 +120,7 @@ export default function Location() {
                     >
                       <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
                     </svg>
-                    <span className="font-body text-[12px] text-primary/60 leading-relaxed">
+                    <span className="font-body text-[12px] text-primary leading-relaxed">
                       {store.address}
                     </span>
                   </div>
@@ -138,7 +138,7 @@ export default function Location() {
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 6v6l4 2" />
                     </svg>
-                    <span className="font-body text-[12px] text-primary/60">
+                    <span className="font-body text-[12px] text-primary">
                       {store.hours}
                     </span>
                   </div>
@@ -153,7 +153,7 @@ export default function Location() {
                     >
                       <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
                     </svg>
-                    <span className="font-body text-[12px] text-primary/60">
+                    <span className="font-body text-[12px] text-primary">
                       {store.phone}
                     </span>
                   </div>
@@ -176,7 +176,7 @@ export default function Location() {
                       href={store.maps}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-body text-[11px] text-primary/55 underline hover:text-primary/80 transition-colors"
+                      className="font-body text-[11px] text-primary underline hover:text-primary transition-colors"
                     >
                       View on Google Maps
                     </a>

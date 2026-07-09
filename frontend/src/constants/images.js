@@ -35,11 +35,11 @@ export const IMAGES = {
   placeholder: createPlaceholder(800, 600, "Image Placeholder"),
 
   // Hero section images
-  heroImage: "/image/1-p1.png",
+  heroImage: "/image/1-p1.jpeg",
   heroImageAbout: "/image/1-p2.png",
 
   // About / Story section
-  aboutImage: "/image/2-p1.png",
+  aboutImage: "/image/2-p1.jpeg",
   storyImage: "/image/2-p2.png",
 
   // Product images
@@ -68,4 +68,9 @@ export const IMAGES = {
   // Contact page
   contactHero: "/image/loc1.png",
   map: createPlaceholder(1600, 600, "Google Maps Placeholder"),
+
+  bakeIcon: "/assets/icon bake atw fermen.png",
+  halalIcon: "/assets/logo icon halal.png",
+  freshIcon: "/assets/icon fresh bake.png",
+  locationIcon: "/assets/icon location 1.png",
 };

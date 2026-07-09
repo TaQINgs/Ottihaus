@@ -23,7 +23,7 @@ export default function ProductCard({ name, category, image, index }) {
           {name}
         </h4>
         {category && (
-          <p className="font-body text-[12px] text-primary/50 mt-1">
+          <p className="font-body text-[12px] text-primary mt-1">
             {category}
           </p>
         )}

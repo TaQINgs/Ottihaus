@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer id="footer">
       {/* Main Footer */}
-      <div className="bg-secondary/30 py-16">
+      <div className="bg-secondary py-16">
         <div className="container">
           {/* Logo */}
           <h2 className="font-heading text-[32px] font-bold text-primary mb-10">
@@ -10,7 +10,7 @@ export default function Footer() {
           </h2>
 
           {/* Info Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-[700px]">
+          <div className="grid grid-cols-1 gap-8 max-w-[200px]">
             {/* Outlet Center */}
             <div>
               <div className="flex items-start gap-2 mb-2">
@@ -25,7 +25,7 @@ export default function Footer() {
                   Outlet Center
                 </span>
               </div>
-              <p className="font-body text-[13px] text-primary/65 leading-relaxed pl-6">
+              <p className="font-body text-[13px] text-primary leading-relaxed pl-6">
                 Jl. Banteng, No.104, Turangga, Kec.
                 Lengkong, Kota Bandung, Jawa Barat
                 40264
@@ -48,7 +48,7 @@ export default function Footer() {
               </div>
               <a
                 href="mailto:admin@sincerahomemade.com"
-                className="font-body text-[13px] text-primary/65 underline pl-6 block"
+                className="font-body text-[13px] text-primary underline pl-6 block"
               >
                 admin@sincerahomemade.com
               </a>
@@ -68,7 +68,7 @@ export default function Footer() {
                   Phone
                 </span>
               </div>
-              <p className="font-body text-[13px] text-primary/65 pl-6">
+              <p className="font-body text-[13px] text-primary pl-6">
                 (+62)855-1236-100
               </p>
             </div>
