@@ -29,48 +29,63 @@ export const SECTION_BACKGROUNDS = {
 // image containers. Replace with real photos later.
 export const IMAGES = {
   // Global background pattern (subtle bread illustrations)
-  background: "/image/bg.png",
+  background: "/image/bg.webp",
 
   // Generic placeholder
   placeholder: createPlaceholder(800, 600, "Image Placeholder"),
 
   // Hero section images
-  heroImage: "/image/1-p1.jpeg",
-  heroImageAbout: "/image/1-p2.png",
+  heroImage: "/image/1-p1.webp",
+  heroImageAbout: "/image/1-p2.webp",
 
   // About / Story section
-  aboutImage: "/image/2-p1.jpeg",
-  storyImage: "/image/2-p2.png",
+  aboutImage: "/image/2-p1.webp",
+  storyImage: "/image/2-p2.webp",
 
   // Product images
-  product1: "/image/produk1.png",
-  product2: "/image/produk2.png",
-  product3: "/image/produk3.png",
+  product1: "/image/produk1.webp",
+  product2: "/image/produk2.webp",
+  product3: "/image/produk3.webp",
+  product4: "/image/produk4.webp",
+  product5: "/image/produk5.webp",
 
   // Location section
-  locationImage: "/image/1-p1.png",
+  locationImage: "/image/1-p1.webp",
 
   // Quality section (About page)
-  qualityImage: "/image/3-p2.png",
+  qualityImage: "/image/3-p2.webp",
 
   // Menu page
-  menuHero: "/image/1-p3.png",
+  menuHero: "/image/1-p3.webp",
   menuProduct: createPlaceholder(400, 400, "Menu Product"),
 
   // Location page
-  locationHero: "/image/loc2.png",
-  storeCard: "/image/loc1.png",
+  locationHero: "/image/loc2.webp",
+  storeCard: "/image/loc1.webp",
 
   // Testimonial
-  testimonialImage: "/image/testi.jpeg",
+  testi1: "/image/testi.webp",
+  testi2: "/image/testi2.webp",
+  testi3: "/image/testi3.webp",
   testimonialAvatar: createPlaceholder(100, 100, "Avatar"),
 
   // Contact page
-  contactHero: "/image/loc1.png",
+  contactHero: "/image/loc1.webp",
   map: createPlaceholder(1600, 600, "Google Maps Placeholder"),
 
-  bakeIcon: "/assets/icon bake atw fermen.png",
-  halalIcon: "/assets/logo icon halal.png",
-  freshIcon: "/assets/icon fresh bake.png",
-  locationIcon: "/assets/icon location 1.png",
+  bakeIcon: "/assets/icon bake atw fermen.webp",
+  halalIcon: "/assets/logo icon halal.webp",
+  freshIcon: "/assets/icon fresh bake.webp",
+  locationIcon: "/assets/icon location 1.webp",
+
+  headhome: "/assets/headberanda.webp",
+  headabout: "/assets/headabout.webp",
+  headmenu: "/assets/headmenu.webp",
+  headlocation: "/assets/headlokasi.webp",
+  headcontact: "/assets/headlokasi.webp",
+
+  cabAntapani: "/assets/Antapani cabang.webp",
+  cabCimahi: "/assets/Cimahi cabang.webp",
+  cabCentral: "/assets/Central cabang.webp",
+  cabDipatiukur: "/assets/Dipatiukur cabang.webp",
 };

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
+import { IMAGES } from "../constants/images";
 
 export default function Header() {
   const location = useLocation();
@@ -12,13 +13,24 @@ export default function Header() {
     { label: "Contact", href: "/contact" },
   ];
 
+  const pageIcons = {
+    "/": IMAGES.headhome,
+    "/about": IMAGES.headabout,
+    "/menu": IMAGES.headmenu,
+    "/location": IMAGES.headlocation,
+    "/contact": IMAGES.headcontact,
+  };
+
+  const currentIcon = pageIcons[location.pathname] ?? IMAGES.headhome;
+
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-secondary)] backdrop-blur-sm border-b border-[var(--color-border)]">
+    <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-secondary)] backdrop-blur-sm">
       <div className="container flex items-center justify-between h-[68px]">
         {/* Logo */}
         <Link
           to="/"
-          className="font-heading text-[20px] font-bold text-primary tracking-[1px]"
+          className="font-heading text-[30px] font-bold text-primary tracking-[1px]"
         >
           otti haus
         </Link>
@@ -43,45 +55,14 @@ export default function Header() {
         <div className="flex items-center gap-2">
           {/* Profile Icon — small brown circle */}
           <button
-            className="w-[36px] h-[36px] rounded-full bg-primary flex items-center justify-center transition-transform duration-200 hover:scale-105"
-            aria-label="Profile"
-            id="header-profile-btn"
+            className="transition-transform duration-200 hover:scale-105"
+            aria-label="Page Icon"
           >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-          </button>
-
-          {/* Cart Icon — small tan/secondary circle */}
-          <button
-            className="w-[36px] h-[36px] rounded-full bg-secondary flex items-center justify-center transition-transform duration-200 hover:scale-105"
-            aria-label="Cart"
-            id="header-cart-btn"
-          >
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#4d362e"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-            </svg>
+            <img
+              src={currentIcon}
+              alt="Current Page"
+              className="w-[130px] h-[130px] object-contain"
+            />
           </button>
 
           {/* Mobile Menu Button */}

@@ -171,7 +171,7 @@ export default function About() {
       {/* ===== WHY CHOOSE US ===== */}
       <section className="section">
         <div className="container text-center">
-          <p className="label">why otti haus</p>
+          <p className="label">Why otti haus</p>
           <h2 className="font-heading font-bold text-primary mb-14 text-[30px] md:text-[38px]">
             Breads that fit your taste and day.
           </h2>
@@ -179,7 +179,7 @@ export default function About() {
           {/* 3 Columns with Vertical Dividers */}
           <div className="grid grid-cols-1 md:grid-cols-3 w-full">
             {/* Feature 1 */}
-            <div className="flex flex-col items-center text-center px-4 py-8 border-b md:border-b-0 md:border-r-[5px] border-[#A88B6A]">
+            <div className="flex flex-col items-center text-center px-4 py-8 border-b md:border-b-0 md:border-r-[2px] border-[#A88B6A]">
               <FeatureCard
                 icon={
                   <img
@@ -194,7 +194,7 @@ export default function About() {
             </div>
 
             {/* Feature 2 */}
-            <div className="flex flex-col items-center text-center px-4 py-8 border-b md:border-b-0 md:border-r-[5px] border-[#A88B6A]">
+            <div className="flex flex-col items-center text-center px-4 py-8 border-b md:border-b-0 md:border-r-[2px] border-[#A88B6A]">
               <FeatureCard
                 icon={
                   <img

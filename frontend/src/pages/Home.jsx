@@ -6,9 +6,9 @@ import Button from "../components/Button";
 import TestimonialSection from "../components/TestimonialSection";
 
 const PRODUCTS = [
-  { id: 1, name: "Choco Brownie Cookies", category: "Cookies" },
+  { id: 1, name: "Choco Brownie Cookies", category: "Sourdough" },
   { id: 2, name: "Original Sourdough", category: "Sourdough" },
-  { id: 3, name: "Cranberry Cheese Bread", category: "Bread" },
+  { id: 3, name: "Cranberry Cheese Bread", category: "Sourdough" },
 ];
 
 const STORES = [
@@ -18,35 +18,35 @@ const STORES = [
     address: "Jl. KH Ahmad Dahlan",
     hours: "08:00 — 21:00",
     phone: "0855-1236-100",
-    maps: "https://maps.google.com",
-    image: IMAGES.locationImage,
+    maps: "https://maps.app.goo.gl/c7uFsSEkL3CSZFKu9",
+    image: IMAGES.cabCentral,
   },
   {
     id: 2,
     name: "OTTI HAUS DIPATIUKUR",
-    address: "Jl. Dipati Ukur No. 780",
+    address: "Jl. Dipati Ukur No. 70C",
     hours: "08:00 — 21:00",
-    phone: "0855-1236-200",
-    maps: "https://maps.google.com",
-    image: IMAGES.storeCard,
+    phone: "0855-1236-100",
+    maps: "https://maps.app.goo.gl/8PqL9S1ufVrbKGSU8",
+    image: IMAGES.cabDipatiukur,
   },
   {
     id: 3,
     name: "OTTI HAUS ANTAPANI",
-    address: "Jl. Terusan Jakarta 41",
+    address: "Jl. Purwakarta No. 66",
     hours: "08:00 — 21:00",
-    phone: "0855-1236-300",
-    maps: "https://maps.google.com",
-    image: IMAGES.storeCard,
+    phone: "0855-1236-100",
+    maps: "https://maps.app.goo.gl/3U8AbkvQ5hEfWLGd9",
+    image: IMAGES.cabAntapani,
   },
   {
     id: 4,
     name: "OTTI HAUS CIMAHI",
-    address: "Jl. Raya Cimahi No. 74",
+    address: "Jl. Amir Machmud No. 152",
     hours: "08:00 — 21:00",
-    phone: "0855-1236-400",
-    maps: "https://maps.google.com",
-    image: IMAGES.storeCard,
+    phone: "0855-1236-100",
+    maps: "https://maps.app.goo.gl/xWWUTeVDpyoBUTH48",
+    image: IMAGES.cabCimahi,
   },
 ];
 
@@ -155,7 +155,7 @@ export default function Home() {
           </h2>
 
           {/* Product Grid — 3 columns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 w-full mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[900px] mx-auto mb-10">
             {PRODUCTS.map((product, index) => (
               <ProductCard
                 key={product.id}

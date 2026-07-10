@@ -1,6 +1,11 @@
 import Button from "./Button";
 import { SECTION_BACKGROUNDS } from "../constants/images";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function HeroSection({
   label,
@@ -10,8 +15,11 @@ export default function HeroSection({
   primaryBtn,
   secondaryBtn,
   image,
+  images,
   imageAlt = "Otti Haus",
 }) {
+
+  const imageList = images ?? (image ? [image] : []);
   return (
     <section className="section pt-[140px] pb-[var(--spacing-section)] relative"
       style={{
@@ -77,12 +85,58 @@ export default function HeroSection({
 
           {/* Right Image — 60% */}
           <div className="w-full md:w-[45%] order-1 md:order-2">
-            <div className="rounded-[8px] overflow-hidden">
+            {/* <div className="rounded-[8px] overflow-hidden">
               <img
                 src={image}
                 alt={imageAlt}
                 className="w-full h-[320px] md:h-[480px] object-cover"
               />
+            </div> */}
+            <div className="rounded-[8px] overflow-hidden">
+
+              {imageList.length > 1 ? (
+
+                <Swiper
+                  modules={[Autoplay]}
+                  slidesPerView={1}
+                  loop
+                  speed={700}
+                  autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                  }}
+                  pagination={{
+                    clickable: true,
+                  }}
+                  className="heroSwiper"
+                >
+
+                  {imageList.map((img, index) => (
+
+                    <SwiperSlide key={index}>
+
+                      <img
+                        src={img}
+                        alt={`${imageAlt} ${index + 1}`}
+                        className="w-full h-[320px] md:h-[480px] object-cover"
+                      />
+
+                    </SwiperSlide>
+
+                  ))}
+
+                </Swiper>
+
+              ) : (
+
+                <img
+                  src={imageList[0]}
+                  alt={imageAlt}
+                  className="w-full h-[320px] md:h-[480px] object-cover"
+                />
+
+              )}
+
             </div>
           </div>
         </div>
