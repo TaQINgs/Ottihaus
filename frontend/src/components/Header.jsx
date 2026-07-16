@@ -23,6 +23,12 @@ export default function Header() {
 
   const currentIcon = pageIcons[location.pathname] ?? IMAGES.headhome;
 
+  const handleNavClick = () => {
+    // Force instant scroll to top on nav link click to prevent visual scrolls
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+  };
+
 
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-[var(--color-secondary)] backdrop-blur-sm">
@@ -31,6 +37,7 @@ export default function Header() {
         <Link
           to="/"
           className="font-heading text-[30px] font-bold text-primary tracking-[1px]"
+          onClick={handleNavClick}
         >
           otti haus
         </Link>
@@ -41,10 +48,11 @@ export default function Header() {
             <Link
               key={link.label}
               to={link.href}
-              className={`font-body text-[17px] text-primary transition-opacity duration-300 hover:opacity-100 ${location.pathname === link.href
-                ? "opacity-100 font-medium"
+              className={`font-body text-[17px] text-primary transition-opacity duration-300 hover:opacity-100 nav-link-animated ${location.pathname === link.href
+                ? "opacity-100 font-medium nav-link-animated--active"
                 : "opacity-60"
                 }`}
+              onClick={handleNavClick}
             >
               {link.label}
             </Link>
@@ -88,7 +96,10 @@ export default function Header() {
                 key={link.label}
                 to={link.href}
                 className="font-body text-[14px] text-primary hover:text-primary transition-colors"
-                onClick={() => setMobileOpen(false)}
+                onClick={() => {
+                  setMobileOpen(false);
+                  handleNavClick();
+                }}
               >
                 {link.label}
               </Link>

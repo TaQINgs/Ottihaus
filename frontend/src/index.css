@@ -868,3 +868,197 @@ a {
     padding-bottom: 64px;
   }
 }
+
+/* ============================================================
+   PREMIUM MOTION SYSTEM
+   ============================================================ */
+
+/* ── Scroll Reveal ─────────────────────────────────────────── */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 600ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity, transform;
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Card Hover Enhancements ───────────────────────────────── */
+
+.card-hover {
+  transition:
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(77, 54, 46, 0.1);
+}
+
+/* ── Image Hover Zoom ──────────────────────────────────────── */
+
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.03);
+}
+
+/* ── Nav Link Underline Animation ──────────────────────────── */
+
+.nav-link-animated {
+  position: relative;
+}
+
+.nav-link-animated::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 1.5px;
+  background-color: var(--color-primary);
+  transition: width 300ms cubic-bezier(0.4, 0, 0.2, 1), left 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link-animated:hover::after,
+.nav-link-animated--active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ── Reduced Motion ────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   PREMIUM CUSTOM CURSOR SYSTEM
+   ============================================================ */
+
+/* Hide native cursor globally on desktop/fine-pointer devices */
+@media (pointer: fine) {
+  html, body, a, button, img, input, textarea, select, iframe, [role="button"], .product-card, .btn, .swiper-slide {
+    cursor: none !important;
+  }
+  /* Keep typing caret inside active fields */
+  input:focus, textarea:focus, input[type="text"], input[type="email"], textarea {
+    cursor: text !important;
+  }
+}
+
+.custom-cursor-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 99999;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.custom-cursor--visible {
+  opacity: 1;
+}
+
+/* ── Inner dot ─────────────────────────────────────────────── */
+
+.custom-cursor__inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  pointer-events: none;
+  z-index: 100000;
+  transform: translate3d(0, 0, 0) translate(-50%, -50%);
+}
+
+/* ── Outer ring ────────────────────────────────────────────── */
+
+.custom-cursor__outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-primary);
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate3d(0, 0, 0) translate(-50%, -50%);
+  background-color: rgba(77, 54, 46, 0);
+  box-sizing: border-box;
+}
+
+/* ── Text within custom cursors ────────────────────────────── */
+
+.custom-cursor__text {
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Subtle Trail ──────────────────────────────────────────── */
+
+.custom-cursor__trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary);
+  pointer-events: none;
+  z-index: 99998;
+  opacity: 0;
+  transform: translate3d(0, 0, 0) translate(-50%, -50%);
+  box-sizing: border-box;
+}
+
+.custom-cursor--visible .custom-cursor__trail--1 {
+  opacity: 0.05;
+}
+
+.custom-cursor--visible .custom-cursor__trail--2 {
+  opacity: 0.03;
+}
+
+.custom-cursor--visible .custom-cursor__trail--3 {
+  opacity: 0.015;
+}

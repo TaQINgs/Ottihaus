@@ -2,6 +2,7 @@ import { IMAGES } from "../constants/images";
 import HeroSection from "../components/HeroSection";
 import Button from "../components/Button";
 import FeatureCard from "../components/FeatureCard";
+import ScrollReveal from "../components/ScrollReveal";
 
 export default function About() {
   return (
@@ -24,6 +25,7 @@ export default function About() {
       />
 
       {/* ===== STORY SECTION ===== */}
+      <ScrollReveal>
       <section className="section">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
@@ -85,8 +87,10 @@ export default function About() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== QUALITY SECTION ===== */}
+      <ScrollReveal delay={100}>
       <section className="section">
         <div className="container">
           <div className="flex flex-col md:flex-row items-start gap-10 md:gap-14">
@@ -167,8 +171,10 @@ export default function About() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== WHY CHOOSE US ===== */}
+      <ScrollReveal delay={100}>
       <section className="section">
         <div className="container text-center">
           <p className="label">Why otti haus</p>
@@ -225,6 +231,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
     </>
   );
 }

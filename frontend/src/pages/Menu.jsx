@@ -3,6 +3,7 @@ import ProductCard from "../components/ProductCard";
 import Button from "../components/Button";
 import TestimonialSection from "../components/TestimonialSection";
 import HeroSection from "../components/HeroSection";
+import ScrollReveal from "../components/ScrollReveal";
 
 const MENU_PRODUCTS = [
   { id: 1, name: "Choco Brownie Cookies", category: "Sourdough" },
@@ -37,6 +38,7 @@ export default function Menu() {
       />
 
       {/* ===== FEATURED PRODUCTS SECTION ===== */}
+      <ScrollReveal>
       <section className="section">
         <div className="container text-center">
           <p className="label">Our Everyday Bestsellers</p>
@@ -58,6 +60,7 @@ export default function Menu() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== CUSTOMER TESTIMONIAL SECTION ===== */}
       <TestimonialSection />

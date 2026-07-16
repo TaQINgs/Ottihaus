@@ -1,6 +1,7 @@
 import { IMAGES } from "../constants/images";
 import Button from "../components/Button";
 import TestimonialSection from "../components/TestimonialSection";
+import ScrollReveal from "../components/ScrollReveal";
 
 const STORES = [
   {
@@ -89,6 +90,7 @@ export default function Location() {
       </section>
 
       {/* ===== STORE LOCATIONS SECTION ===== */}
+      <ScrollReveal>
       <section className="section">
         <div className="container text-center">
           <p className="label">store &amp; hours</p>
@@ -197,6 +199,7 @@ export default function Location() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== TESTIMONIAL SECTION ===== */}
       <TestimonialSection />

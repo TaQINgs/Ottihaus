@@ -7,6 +7,7 @@ import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useRef } from "react";
 import HeroSection from "../components/HeroSection";
+import ScrollReveal from "../components/ScrollReveal";
 
 const OUTLETS = [
   {
@@ -62,6 +63,7 @@ export default function Contact() {
       />
 
       {/* ===== CONTACT INFORMATION SECTION ===== */}
+      <ScrollReveal>
       <section className="section section-contact">
         <div className="container">
           <div className="border border-[var(--color-border)] rounded-[8px] bg-white/20 p-8 md:p-12">
@@ -129,9 +131,11 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== MAP SECTION ===== */}
       {/* ===== MAP SECTION ===== */}
+      <ScrollReveal>
       <section className="section pb-[100px] section-contact2">
         <div className="container text-center">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6">
@@ -162,6 +166,7 @@ export default function Contact() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== FUTURE REUSABLE CONTACT FORM (HIDDEN BY DEFAULT) ===== */}
       {showForm && (

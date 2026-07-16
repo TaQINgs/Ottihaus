@@ -3,6 +3,7 @@ import { IMAGES } from "../constants/images";
 import HeroSection from "../components/HeroSection";
 import ProductCard from "../components/ProductCard";
 import Button from "../components/Button";
+import ScrollReveal from "../components/ScrollReveal";
 import TestimonialSection from "../components/TestimonialSection";
 
 const PRODUCTS = [
@@ -83,6 +84,7 @@ export default function Home() {
       />
 
       {/* ===== ABOUT SECTION ===== */}
+      <ScrollReveal>
       <section className="section">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
@@ -145,8 +147,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== PRODUCT SECTION ===== */}
+      <ScrollReveal delay={100}>
       <section id="products" className="section">
         <div className="container text-center">
           <p className="label">Otti's Finest</p>
@@ -169,11 +173,13 @@ export default function Home() {
           <Button variant="primary" to="/menu">see all menu</Button>
         </div>
       </section>
+      </ScrollReveal>
 
       {/* ===== TESTIMONIAL SECTION ===== */}
       {/* <TestimonialSection /> */}
 
       {/* ===== LOCATION SECTION ===== */}
+      <ScrollReveal>
       <section id="location" className="section">
         <div className="container">
           <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
@@ -304,6 +310,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      </ScrollReveal>
     </>
   );
 }

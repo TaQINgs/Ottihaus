@@ -5,7 +5,7 @@ export default function ProductCard({ name, category, image, index }) {
   const imageUrl = image || productImages[index] || IMAGES.placeholder;
 
   return (
-    <div className="border border-[var(--color-border)] overflow-hidden bg-white/20 transition-transform duration-300 hover:-translate-y-1">
+    <div className="product-card border border-[var(--color-border)] overflow-hidden bg-white/20 transition-transform duration-300 hover:-translate-y-1">
       {/* Product Image */}
       <div className="p-4 pb-8">
         <div className="aspect-square overflow-hidden rounded-[6px] bg-[#d4cbbf]">

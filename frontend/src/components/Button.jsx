@@ -24,8 +24,14 @@ export default function Button({
   const classes = `${base} ${variantClass} ${className}`;
 
   if (to) {
+    const handleBtnClick = (e) => {
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, 0);
+      if (props.onClick) props.onClick(e);
+    };
+
     return (
-      <Link to={to} className={classes}>
+      <Link to={to} className={classes} onClick={handleBtnClick}>
         {children}
       </Link>
     );

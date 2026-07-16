@@ -2,6 +2,8 @@ import { Routes, Route } from "react-router-dom";
 import { IMAGES } from "./constants/images";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+import CustomCursor from "./components/CustomCursor";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Menu from "./pages/Menu";
@@ -11,6 +13,9 @@ import Contact from "./pages/Contact";
 export default function App() {
   return (
     <>
+      <ScrollToTop />
+      <CustomCursor />
+
       {/* Background Image with Overlay */}
       <div
         className="site-background"
