@@ -942,6 +942,7 @@ a {
 /* ── Reduced Motion ────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -963,11 +964,29 @@ a {
 
 /* Hide native cursor globally on desktop/fine-pointer devices */
 @media (pointer: fine) {
-  html, body, a, button, img, input, textarea, select, iframe, [role="button"], .product-card, .btn, .swiper-slide {
+
+  html,
+  body,
+  a,
+  button,
+  img,
+  input,
+  textarea,
+  select,
+  iframe,
+  [role="button"],
+  .product-card,
+  .btn,
+  .swiper-slide {
     cursor: none !important;
   }
+
   /* Keep typing caret inside active fields */
-  input:focus, textarea:focus, input[type="text"], input[type="email"], textarea {
+  input:focus,
+  textarea:focus,
+  input[type="text"],
+  input[type="email"],
+  textarea {
     cursor: text !important;
   }
 }
@@ -1021,18 +1040,6 @@ a {
   box-sizing: border-box;
 }
 
-/* ── Text within custom cursors ────────────────────────────── */
-
-.custom-cursor__text {
-  color: #ffffff;
-  font-family: var(--font-body);
-  font-size: 8px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0;
-  pointer-events: none;
-}
 
 /* ── Subtle Trail ──────────────────────────────────────────── */
 
