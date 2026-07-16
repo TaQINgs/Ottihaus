@@ -1,7 +1,6 @@
 import { IMAGES } from "../constants/images";
 import Button from "../components/Button";
 import TestimonialSection from "../components/TestimonialSection";
-import HeroSection from "../components/HeroSection";
 
 const STORES = [
   {
@@ -45,24 +44,49 @@ const STORES = [
 export default function Location() {
   return (
     <>
-      {/* ===== HERO SECTION ===== */}
-      <HeroSection
-        label="Contact Us"
-        heading="Get In Touch With OTTI HAUS"
-        description="Ada pertanyaan tentang menu, pesanan custom, reservasi tempat, atau kerjasama? Hubungi tim OTTI HAUS — kami siap membantu dengan cepat dan ramah."
-        primaryBtn={{
-          text: "Chat With Us",
-          href: "https://wa.me/628123456789",
-        }}
-        // image={IMAGES.locationHero}
-        images={[
-          IMAGES.cabCentral,
-          IMAGES.cabDipatiukur,
-          IMAGES.cabAntapani,
-          IMAGES.cabCimahi,
-        ]}
-        imageAlt="Otti Haus bakery storefront"
-      />
+      {/* ===== CONTACT HERO SECTION ===== */}
+      <section className="contact-hero">
+        {/* Full-width background image */}
+        <div className="contact-hero__image-wrapper">
+          <img
+            src={IMAGES.locationHero}
+            alt="Otti Haus bakery storefront"
+            className="contact-hero__img"
+          />
+        </div>
+
+        {/* Dark overlay */}
+        <div className="contact-hero__overlay" />
+
+        {/* Bottom fade into cream */}
+        <div className="contact-hero__bottom-fade" />
+
+        {/* Content — right side */}
+        <div className="contact-hero__content">
+          <div className="contact-hero__content-inner">
+            <p className="label contact-hero__label">Contact Us</p>
+
+            <h1 className="contact-hero__heading">
+              Get In Touch With OTTI HAUS
+            </h1>
+
+            <p className="contact-hero__description">
+              Ada pertanyaan tentang menu, pesanan custom, reservasi tempat, atau
+              kerjasama? Hubungi tim OTTI HAUS — kami siap membantu dengan cepat
+              dan ramah.
+            </p>
+
+            <div>
+              <Button
+                variant="primary"
+                href="https://wa.me/628123456789"
+              >
+                Chat With Us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ===== STORE LOCATIONS SECTION ===== */}
       <section className="section">

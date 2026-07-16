@@ -295,3 +295,576 @@ a {
     font-size: 24px;
   }
 }
+
+/* ============================================================
+   HERO EDITORIAL — Premium Blend Layout
+   ============================================================ */
+
+.hero-editorial {
+  position: relative;
+  min-height: 100vh;
+  background-color: #F9F7F4;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* Solid cream backdrop — blocks global site-background pattern */
+.hero-editorial::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #F9F7F4;
+  z-index: 0;
+}
+
+/* Subtle bakery pattern — reduced opacity */
+.hero-editorial__pattern {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.08;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Image Composition ─────────────────────────────────────── */
+
+.hero-editorial__image-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Cream gradient — dissolves image into background */
+.hero-editorial__image-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(to right,
+      #F9F7F4 0%,
+      rgba(249, 247, 244, 0.97) 18%,
+      rgba(249, 247, 244, 0.78) 38%,
+      rgba(249, 247, 244, 0.45) 58%,
+      rgba(249, 247, 244, 0.15) 78%,
+      transparent 100%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Soft blur on the left transition zone */
+.hero-editorial__image-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(12px);
+  -webkit-mask-image: linear-gradient(to right, black 0%, black 20%, transparent 100%);
+  mask-image: linear-gradient(to right, black 0%, black 5%, transparent 30%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Image inner — mask + reveal animation */
+.hero-editorial__image-inner {
+  width: 100%;
+  height: 100%;
+  animation: heroImageReveal 1200ms ease-out both;
+  -webkit-mask-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 12%,
+      rgba(0, 0, 0, 0.65) 25%,
+      rgba(0, 0, 0, 0.88) 38%,
+      black 50%);
+  mask-image: linear-gradient(to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.35) 12%,
+      rgba(0, 0, 0, 0.65) 25%,
+      rgba(0, 0, 0, 0.88) 38%,
+      black 50%);
+}
+
+.hero-editorial__image-inner .swiper-wrapper,
+.hero-editorial__image-inner .swiper-slide {
+  height: 100%;
+}
+
+.hero-editorial__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ── Content ───────────────────────────────────────────────── */
+
+.hero-editorial__content {
+  position: relative;
+  z-index: 5;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 80px;
+  pointer-events: none;
+}
+
+.hero-editorial__content-inner {
+  pointer-events: auto;
+  padding-left: clamp(32px, calc((100vw - 1200px) / 2 + 32px), 160px);
+  padding-right: 32px;
+  width: 55%;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+
+.hero-editorial__label {
+  margin-bottom: 20px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 100ms;
+}
+
+.hero-editorial__heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 52px;
+  color: var(--color-primary);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 200ms;
+}
+
+.hero-editorial__subtitle {
+  margin-bottom: 28px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 300ms;
+}
+
+.hero-editorial__description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-primary);
+  line-height: 1.8;
+  opacity: 0.8;
+  max-width: 450px;
+  margin-bottom: 38px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 400ms;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+
+.hero-editorial__buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-editorial__buttons .btn {
+  padding: 14px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero-editorial__buttons .btn:first-child {
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 500ms;
+}
+
+.hero-editorial__buttons .btn:nth-child(2) {
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 650ms;
+}
+
+.hero-editorial__buttons .btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(77, 54, 46, 0.18);
+}
+
+/* ── Keyframes ─────────────────────────────────────────────── */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroImageReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ── Responsive — Tablet ───────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .hero-editorial__heading {
+    font-size: 44px;
+  }
+
+  .hero-editorial__image-wrapper {
+    width: 60%;
+  }
+
+  .hero-editorial__content-inner {
+    padding-left: clamp(24px, 5vw, 64px);
+    /* max-width: 460px; */
+    width: 60%;
+  }
+}
+
+/* ── Responsive — Mobile ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero-editorial {
+    background-color: transparent;
+  }
+
+  .hero-editorial__pattern {
+    display: none;
+  }
+
+  .hero-editorial__image-wrapper {
+    width: 100%;
+    z-index: 0;
+  }
+
+  .hero-editorial__image-wrapper::before {
+    width: 100%;
+    background: linear-gradient(to top,
+        rgba(30, 20, 15, 0.82) 0%,
+        rgba(30, 20, 15, 0.55) 40%,
+        rgba(30, 20, 15, 0.3) 70%,
+        rgba(30, 20, 15, 0.15) 100%);
+  }
+
+  .hero-editorial__image-wrapper::after {
+    display: none;
+  }
+
+  .hero-editorial__image-inner {
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+
+  .hero-editorial__content {
+    align-items: flex-end;
+    padding-bottom: 64px;
+  }
+
+  .hero-editorial__content-inner {
+    padding: 0 24px;
+    max-width: 100%;
+  }
+
+  .hero-editorial__heading {
+    font-size: 36px;
+    color: #ffffff;
+  }
+
+  .hero-editorial .label {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-editorial .subtitle {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .hero-editorial__description {
+    color: rgba(255, 255, 255, 0.85);
+    opacity: 1;
+    max-width: 100%;
+  }
+
+  .hero-editorial__buttons .btn-primary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-color: #ffffff;
+  }
+
+  .hero-editorial__buttons .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .hero-editorial__buttons .btn-outline {
+    color: #ffffff;
+    border-color: rgba(255, 255, 255, 0.5);
+  }
+
+  .hero-editorial__buttons .btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border-color: #ffffff;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-editorial__heading {
+    font-size: 28px;
+  }
+
+  .hero-editorial__content {
+    padding-top: 120px;
+    padding-bottom: 48px;
+  }
+}
+
+/* ============================================================
+   CONTACT HERO — Full-Width Background with Bottom Fade
+   ============================================================ */
+
+.contact-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
+}
+
+/* ── Full-width background image ───────────────────────────── */
+
+.contact-hero__image-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  animation: heroImageReveal 1200ms ease-out both;
+}
+
+.contact-hero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── Dark overlay — improves text readability ──────────────── */
+
+.contact-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.2) 0%,
+      rgba(0, 0, 0, 0.3) 50%,
+      rgba(0, 0, 0, 0.35) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── Bottom fade — dissolves image into cream background ───── */
+
+.contact-hero__bottom-fade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgba(249, 247, 244, 0.08) 20%,
+      rgba(249, 247, 244, 0.25) 40%,
+      rgba(249, 247, 244, 0.55) 60%,
+      rgba(249, 247, 244, 0.82) 80%,
+      #F9F7F4 100%);
+}
+
+/* Blur layer at the very bottom */
+.contact-hero__bottom-fade::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 70%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 70%, black 100%);
+  pointer-events: none;
+}
+
+/* ── Content — right side, vertically centered ─────────────── */
+
+.contact-hero__content {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 140px 0 100px;
+}
+
+.contact-hero__content-inner {
+  max-width: 55%;
+  text-align: right;
+  padding-right: clamp(32px, calc((100vw - 1200px) / 2 + 32px), 160px);
+  padding-left: 32px;
+}
+
+/* ── Typography ────────────────────────────────────────────── */
+
+.contact-hero__label {
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.85);
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 100ms;
+}
+
+.contact-hero__heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 52px;
+  color: #ffffff;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  margin-bottom: 24px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 200ms;
+}
+
+.contact-hero__description {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.8;
+  opacity: 1;
+  max-width: 500px;
+  margin-left: auto;
+  margin-bottom: 38px;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 350ms;
+}
+
+/* ── Buttons ───────────────────────────────────────────────── */
+
+.contact-hero__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
+  animation: heroFadeUp 600ms ease-out both;
+  animation-delay: 500ms;
+}
+
+.contact-hero__buttons .btn {
+  padding: 14px 32px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-hero__buttons .btn-primary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border-color: #ffffff;
+}
+
+.contact-hero__buttons .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-hero__buttons .btn-outline {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.contact-hero__buttons .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ── Responsive — Tablet ───────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .contact-hero__heading {
+    font-size: 44px;
+  }
+
+  .contact-hero__content-inner {
+    max-width: 500px;
+    padding-right: clamp(24px, 5vw, 64px);
+  }
+}
+
+/* ── Responsive — Mobile ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .contact-hero__content {
+    justify-content: center;
+    padding-bottom: 80px;
+  }
+
+  .contact-hero__content-inner {
+    text-align: center;
+    max-width: 100%;
+    padding: 0 24px;
+  }
+
+  .contact-hero__heading {
+    font-size: 36px;
+  }
+
+  .contact-hero__description {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+  }
+
+  .contact-hero__buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-hero__overlay {
+    background: linear-gradient(to bottom,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.45) 50%,
+        rgba(0, 0, 0, 0.5) 100%);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-hero__heading {
+    font-size: 28px;
+  }
+
+  .contact-hero__content {
+    padding-top: 120px;
+    padding-bottom: 64px;
+  }
+}

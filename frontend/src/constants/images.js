@@ -60,7 +60,7 @@ export const IMAGES = {
   menuProduct: createPlaceholder(400, 400, "Menu Product"),
 
   // Location page
-  locationHero: "/image/loc2.webp",
+  locationHero: "/image/contact.webp",
   storeCard: "/image/loc1.webp",
 
   // Testimonial

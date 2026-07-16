@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import { useRef } from "react";
+import HeroSection from "../components/HeroSection";
 
 const OUTLETS = [
   {
@@ -42,123 +43,23 @@ export default function Contact() {
   return (
     <>
       {/* ===== HERO SECTION ===== */}
-      <section className="section pt-[140px] pb-[120px]">
-        <div className="container">
-          <div className="flex flex-col md:flex-row items-center gap-10 md:gap-8">
-            {/* Left Content — 45% */}
-            <div className="w-full md:w-[50%] order-2 md:order-1">
-              <p className="label">Location</p>
-              <h1 className="font-heading font-bold text-primary mb-6 text-[36px] md:text-[48px] lg:text-[64px] leading-[1.1]">
-                Visit our space
-              </h1>
-
-              <p className="font-body text-[15px] text-primary leading-[1.8] max-w-[420px]">
-                Cek lokasi terdekat kami, info operasional, dan kontak di sini.
-                Siap melayani kamu untuk dine-in santai, takeaway, maupun
-                pemesanan via delivery.
-              </p>
-            </div>
-
-            {/* Right Content — 55% */}
-            <div className="w-full md:w-[45%] order-1 md:order-2">
-
-              <div className="relative">
-
-                <Swiper
-                  modules={[Navigation, Autoplay]}
-                  slidesPerView={1}
-                  loop
-                  autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                  }}
-                  onSwiper={(swiper) => (swiperRef.current = swiper)}
-                >
-
-                  {OUTLETS.map((outlet) => (
-
-                    <SwiperSlide key={outlet.id}>
-
-                      <div>
-
-                        <div className="overflow-hidden">
-
-                          <img
-                            src={outlet.image}
-                            alt={outlet.name}
-                            className="w-full h-[320px] md:h-[420px] object-cover"
-                          />
-
-                        </div>
-
-                        <div className="text-center mt-5">
-
-                          <h4 className="font-heading text-[16px] font-bold text-primary tracking-wide">
-                            {outlet.name}
-                          </h4>
-
-                          <p className="font-body text-[13px] text-primary mt-1">
-                            {outlet.address}
-                          </p>
-
-                        </div>
-
-                      </div>
-
-                    </SwiperSlide>
-
-                  ))}
-
-                </Swiper>
-
-                {/* Previous */}
-
-                {/* <button
-                  onClick={() => swiperRef.current?.slidePrev()}
-                  className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-[45px] z-20
-      w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-lg"
-                >
-
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M15 18l-6-6 6-6" />
-                  </svg>
-
-                </button> */}
-
-                {/* Next */}
-
-                {/* <button
-                  onClick={() => swiperRef.current?.slideNext()}
-                  className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-[45px] z-20
-      w-9 h-9 rounded-full bg-primary text-white flex items-center justify-center shadow-lg"
-                >
-
-                  <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                  >
-                    <path d="M9 18l6-6-6-6" />
-                  </svg>
-
-                </button> */}
-
-              </div>
-
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroSection
+        label="Location"
+        heading="Visit our space"
+        description="Cek lokasi terdekat kami, info operasional, dan kontak di sini. Siap melayani kamu untuk dine-in santai, takeaway, maupun pemesanan via delivery."
+        primaryBtn={{
+          text: "Chat With Us",
+          href: "https://wa.me/628123456789",
+        }}
+        // image={IMAGES.locationHero}
+        images={[
+          IMAGES.cabCentral,
+          IMAGES.cabDipatiukur,
+          IMAGES.cabAntapani,
+          IMAGES.cabCimahi,
+        ]}
+        imageAlt="Otti Haus bakery storefront"
+      />
 
       {/* ===== CONTACT INFORMATION SECTION ===== */}
       <section className="section section-contact">
