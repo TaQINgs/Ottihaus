@@ -145,13 +145,6 @@ export default function CustomCursor() {
         targetInnerScale = 0.0;
         targetBgOpacity = 1.0;
         targetBorderWidth = 0.0;
-      } else if (activeHover === "product-card") {
-        // Expand into filled circle with "View" text
-        targetOuterScale = 1.5;
-        targetInnerScale = 0.0;
-        targetBgOpacity = 1.0;
-        targetBorderWidth = 0.0;
-        targetTextOpacity = 1.0;
       } else if (activeHover === "hero-image") {
         // Expand slightly, filled — NO text
         targetOuterScale = 1.3;
