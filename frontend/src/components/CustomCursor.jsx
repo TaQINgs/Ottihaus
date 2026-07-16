@@ -105,6 +105,7 @@ export default function CustomCursor() {
     let currentInnerScale = 1.0;
     let currentBgOpacity = 0.0;
     let currentBorderWidth = 1.5;
+    let currentTextOpacity = 0.0;
 
     const history = [];
 
@@ -126,6 +127,7 @@ export default function CustomCursor() {
       let targetInnerScale = 1.0;
       let targetBgOpacity = 0.0;
       let targetBorderWidth = 1.5;
+      let targetTextOpacity = 0.0;
 
       const activeHover = hoverTypeRef.current;
 
@@ -149,6 +151,7 @@ export default function CustomCursor() {
         targetInnerScale = 0.0;
         targetBgOpacity = 1.0;
         targetBorderWidth = 0.0;
+        targetTextOpacity = 1.0;
       } else if (activeHover === "hero-image") {
         // Expand slightly, filled — NO text
         targetOuterScale = 1.3;
@@ -177,7 +180,6 @@ export default function CustomCursor() {
         outerRef.current.style.borderWidth = `${currentBorderWidth}px`;
 
         // Only show text for product-card hover
-
       }
 
       // Trail history
